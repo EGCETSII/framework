@@ -108,5 +108,5 @@ class Operation(ABC):
 
     #This abstract method, executes an operation given a feature model
     @abstractmethod
-    def execute(self, model: FeatureModel) -> 'Operation':
+    def execute(self, model: FeatureModel):
         pass
