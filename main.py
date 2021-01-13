@@ -14,14 +14,12 @@ print(fm)
 
 # Creamos el manager y lo inicializamos
 dm = DiscoverMetamodels()
-#Buscamos los plugins disponibles
-available_plugins = dm.discover()
 
 #Imprimimos los plugins disponibles
-print(available_plugins.get_plugin_names())
+print(dm.plugins.get_plugin_names())
 
 #Buscamos el plugin que acabamos de crear
-plugin=available_plugins.get_plugin_by_name('count_leafs')
+plugin=dm.plugins.get_plugin_by_name('count_leafs')
 
 #Imprimimos las operaciones de los plugins
 print(plugin.operations)
