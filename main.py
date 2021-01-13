@@ -1,10 +1,6 @@
 from core.frozen_points_domain import *
 from core.frozen_points_plugins import DiscoverMetamodels
 
-# Creamos el manager y lo inicializamos
-dm = DiscoverMetamodels()
-#Buscamos los plugins disponibles
-available_plugins = dm.discover()
 
 #Creamos un modelo de manera programatica
 feature_b = Feature('B', [])
@@ -15,6 +11,11 @@ fm = FeatureModel(feature_a)
 
 #Imprimimos ese modelo
 print(fm)
+
+# Creamos el manager y lo inicializamos
+dm = DiscoverMetamodels()
+#Buscamos los plugins disponibles
+available_plugins = dm.discover()
 
 #Imprimimos los plugins disponibles
 print(available_plugins.get_plugin_names())
