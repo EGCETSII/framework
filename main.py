@@ -29,4 +29,17 @@ print(plugin.operations)
 result=plugin.use_operation('CountLeafs',fm)
 
 #Imprimimos el resultado
-print("El modelo tiene " + result + "Features hojas")
+print("El modelo tiene " + str(result) + " Features hojas")
+
+
+#Buscamos el plugin que acabamos de crear
+plugin=available_plugins.get_plugin_by_name('count_features')
+
+#Imprimimos las operaciones de los plugins
+print(plugin.operations)
+
+#Usamos la operacion CountLeafs
+result=plugin.use_operation('CountFeatures',fm)
+
+#Imprimimos el resultado
+print("El modelo tiene " + str(result) + " Features")
