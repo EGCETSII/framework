@@ -30,4 +30,4 @@ print(plugin.operations)
 result=plugin.use_operation('CountLeafs',fm)
 
 #Imprimimos el resultado
-print("El modelo tiene " + str(result) + "Features hojas")
+print("El modelo tiene " + str(result) + " features hojas")
