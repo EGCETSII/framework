@@ -1,11 +1,6 @@
 from core.frozen_points_domain import *
 from core.frozen_points_plugins import DiscoverMetamodels
 
-# Creamos el manager y lo inicializamos
-dm = DiscoverMetamodels()
-#Buscamos los plugins disponibles
-available_plugins = dm.discover()
-
 #Creamos un modelo de manera programatica
 feature_b = Feature('B', [])
 relation = Relation(parent=None, children=[feature_b], card_min=0, card_max=1)	
@@ -16,11 +11,14 @@ fm = FeatureModel(feature_a)
 #Imprimimos ese modelo
 print(fm)
 
+# Creamos el manager y lo inicializamos
+dm = DiscoverMetamodels()
+
 #Imprimimos los plugins disponibles
-print(available_plugins.get_plugin_names())
+print(dm.plugins.get_plugin_names())
 
 #Buscamos el plugin que acabamos de crear
-plugin=available_plugins.get_plugin_by_name('count_leafs')
+plugin=dm.plugins.get_plugin_by_name('count_leafs')
 
 #Imprimimos las operaciones de los plugins
 print(plugin.operations)
@@ -33,7 +31,7 @@ print("El modelo tiene " + str(result) + " Features hojas")
 
 
 #Buscamos el plugin que acabamos de crear
-plugin=available_plugins.get_plugin_by_name('count_features')
+plugin=dm.plugins.get_plugin_by_name('count_features')
 
 #Imprimimos las operaciones de los plugins
 print(plugin.operations)
