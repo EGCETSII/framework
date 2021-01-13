@@ -3,7 +3,7 @@ from core.frozen_points_domain import FeatureModel
 
 class CountLeafs(Operation):
 
-    def execute(self, model: FeatureModel) -> 'Operation':
+    def execute(self, model: FeatureModel):
         result = 0
         for feat in model.get_features():
             if len(feat.get_relations())==0:
