@@ -1,0 +1,7 @@
+from core.frozen_points_domain import Operation
+from core.frozen_points_domain import FeatureModel
+
+class CountFeatures(Operation):
+    
+    def execute(self, model: FeatureModel) -> 'Operation':
+        print("pepe")
